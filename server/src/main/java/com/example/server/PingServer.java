@@ -15,7 +15,7 @@ public class PingServer {
                 .build();
 
         server.start();
-        System.out.println("Server started, listening on " + server.getPort());
+        System.out.println("Server started! Listening on " + server.getPort());
         server.awaitTermination();
     }
 

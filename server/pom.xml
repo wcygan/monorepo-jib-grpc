@@ -76,7 +76,7 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.1.4</version>
+                <version>3.4.0</version>
                 <configuration>
                     <from>
                         <image>openjdk:${java.version}-jre-slim</image>
@@ -88,7 +88,7 @@
                         </platforms>
                     </from>
                     <to>
-                        <image>wcygan/monorepo-jib-proto-server:latest</image>
+                        <image>wcygan/monorepo-jib-proto-server</image>
                     </to>
                     <container>
                         <ports>
