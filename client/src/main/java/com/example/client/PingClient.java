@@ -19,7 +19,7 @@ public class PingClient {
         // Send 10 ping messages, one every second.
         for (int i = 1; i <= 10; i++) {
             PingRequest request = PingRequest.newBuilder()
-                    .setMessage("Ping " + i)
+                    .setMessage("Pog " + i)
                     .build();
 
             try {

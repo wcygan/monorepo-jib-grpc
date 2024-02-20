@@ -1,9 +1,17 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: ping-client-pod
+  name: ping-client-deployment
 spec:
-  containers:
-    - name: ping-client
-      image: wcygan/monorepo-jib-proto-client:latest
-  restartPolicy: Never
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ping-client
+  template:
+    metadata:
+      labels:
+        app: ping-client
+    spec:
+      containers:
+        - name: ping-client
+          image: wcygan/monorepo-jib-proto-client

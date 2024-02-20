@@ -5,7 +5,7 @@ metadata:
 build:
   artifacts:
     - image: wcygan/monorepo-jib-proto-server
-      context: .
+      context: server
       jib:
         project: com.example:server
 manifests:
@@ -24,7 +24,7 @@ requires:
 build:
   artifacts:
     - image: wcygan/monorepo-jib-proto-client
-      context: .
+      context: client
       jib:
         project: com.example:client
 manifests:
@@ -32,3 +32,22 @@ manifests:
     - client/client.yaml
 deploy:
   kubectl: {}
+
+#apiVersion: skaffold/v4beta9
+#kind: Config
+#metadata:
+#  name: monorepo-jib-proto
+#build:
+#  artifacts:
+#    - image: wcygan/monorepo-jib-proto-server
+#      context: server
+#      jib:
+#        project: com.example:server
+#    - image: wcygan/monorepo-jib-proto-client
+#      context: client
+#      jib:
+#        project: com.example:client
+#manifests:
+#  rawYaml:
+#    - server/server.yaml
+#    - client-job.yaml
