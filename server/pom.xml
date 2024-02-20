@@ -89,12 +89,6 @@
                     </from>
                     <to>
                         <image>wcygan/monorepo-jib-proto-server</image>
-                        <auth>
-                            <!--suppress UnresolvedMavenProperty -->
-                            <username>${env.DOCKERHUB_USERNAME}</username>
-                            <!--suppress UnresolvedMavenProperty -->
-                            <password>${env.DOCKERHUB_TOKEN}</password>
-                        </auth>
                     </to>
                     <container>
                         <ports>

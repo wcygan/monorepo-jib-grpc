@@ -23,7 +23,7 @@ jobs:
         run: mvn clean install
 
       - name: Build and Push Server Docker Image
-        run: mvn compile jib:build -pl server
+        run: mvn compile jib:build -pl server -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} -Djib.to.auth.password=${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and Push Client Docker Image
-        run: mvn compile jib:build -pl client
+        run: mvn compile jib:build -pl client -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} -Djib.to.auth.password=${{ secrets.DOCKERHUB_TOKEN }}
