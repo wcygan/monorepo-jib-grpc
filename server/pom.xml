@@ -80,6 +80,12 @@
                 <configuration>
                     <from>
                         <image>openjdk:${java.version}-jre-slim</image>
+                        <platforms>
+                            <platform>
+                                <architecture>arm64</architecture>
+                                <os>linux</os>
+                            </platform>
+                        </platforms>
                     </from>
                     <to>
                         <image>wcygan/monorepo-jib-proto-server:latest</image>
@@ -88,11 +94,6 @@
                         <ports>
                             <port>8080</port>
                         </ports>
-                        <entrypoint>
-                            <shell>sh</shell>
-                            <option>-c</option>
-                            <arg>java -jar /server.jar</arg>
-                        </entrypoint>
                     </container>
                 </configuration>
             </plugin>
