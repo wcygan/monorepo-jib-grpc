@@ -10,7 +10,7 @@ public class PingClient {
     public static void main(String[] args) throws InterruptedException {
         // Create a channel to the server.
         ManagedChannel channel = ManagedChannelBuilder.forAddress("ping-server-service", 8080)
-                .usePlaintext() // Disable SSL to allow plaintext communication (not recommended for production).
+                .usePlaintext()
                 .build();
 
         // Create a stub to interact with the server.
