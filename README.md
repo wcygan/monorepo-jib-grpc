@@ -25,3 +25,13 @@ skaffold delete
 ```
 minikube stop
 ```
+
+## Development
+
+To compile the project (including the protobuf-generated code), run:
+
+```
+mvn compile
+```
+
+Then reload all maven projects in your IDE to index the generated code.
