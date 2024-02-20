@@ -16,10 +16,10 @@ public class PingClient {
         // Create a stub to interact with the server.
         PingServiceGrpc.PingServiceBlockingStub stub = PingServiceGrpc.newBlockingStub(channel);
 
-        // Send 10 ping messages, one every second.
-        for (int i = 1; i <= 10; i++) {
+        int i = 0;
+        while (true) {
             PingRequest request = PingRequest.newBuilder()
-                    .setMessage("Pog " + i)
+                    .setMessage("Ping " + i)
                     .build();
 
             try {
@@ -32,7 +32,9 @@ public class PingClient {
 
             // Wait for a second before sending the next ping.
             Thread.sleep(1000);
+            i++;
         }
+
 
         // Shut down the channel to terminate the connection to the server.
         channel.shutdownNow();
