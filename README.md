@@ -18,7 +18,12 @@ skaffold dev
 
 ## Monitoring
 
-View [Metrics](http://127.0.0.1:9090/graph?g0.expr=sum(rate(node_cpu_seconds_total%7Bmode!%3D%22idle%22%7D%5B5m%5D))%20by%20(instance)&g0.tab=0&g0.display_mode=lines&g0.show_exemplars=0&g0.range_input=1h) produced by Prometheus and Grafana
+Visit:
+
+- Prometheus: http://localhost:9090/
+- Grafana: http://localhost:3000/
+  - Username: admin
+  - Password: prom-operator
 
 ## Clean up
 
