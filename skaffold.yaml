@@ -1,53 +1,14 @@
-apiVersion: skaffold/v4beta9
+apiVersion: skaffold/v4beta1
 kind: Config
 metadata:
-  name: server
-build:
-  artifacts:
-    - image: wcygan/monorepo-jib-proto-server
-      context: server
-      jib:
-        project: com.example:server
-manifests:
-  rawYaml:
-    - server/server.yaml
-deploy:
-  kubectl: {}
----
-apiVersion: skaffold/v4beta9
-kind: Config
-metadata:
-  name: client
+  name: client-server-application
 requires:
   - configs:
       - server
-build:
-  artifacts:
-    - image: wcygan/monorepo-jib-proto-client
-      context: client
-      jib:
-        project: com.example:client
-manifests:
-  rawYaml:
-    - client/client.yaml
-deploy:
-  kubectl: {}
-
-#apiVersion: skaffold/v4beta9
-#kind: Config
-#metadata:
-#  name: monorepo-jib-proto
-#build:
-#  artifacts:
-#    - image: wcygan/monorepo-jib-proto-server
-#      context: server
-#      jib:
-#        project: com.example:server
-#    - image: wcygan/monorepo-jib-proto-client
-#      context: client
-#      jib:
-#        project: com.example:client
-#manifests:
-#  rawYaml:
-#    - server/server.yaml
-#    - client-job.yaml
+    path: server/skaffold.yaml
+  - configs:
+      - client
+    path: client/skaffold.yaml
+  - configs:
+      - monitoring-installation
+    path: monitoring/skaffold.yaml

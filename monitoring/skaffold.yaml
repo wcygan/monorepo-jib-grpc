@@ -1,0 +1,26 @@
+apiVersion: skaffold/v3
+kind: Config
+metadata:
+  name: monitoring-installation
+deploy:
+  helm:
+    releases:
+      - name: prometheus-community
+        repo: https://prometheus-community.github.io/helm-charts
+        remoteChart: kube-prometheus-stack
+        version: 66.1.1
+        namespace: monitoring
+        createNamespace: true
+        valuesFiles:
+          - values.yaml
+portForward:
+  - resourceType: service
+    resourceName: prometheus-community-kube-prometheus
+    namespace: monitoring
+    port: 9090
+    localPort: 9090
+  - resourceType: service
+    resourceName: prometheus-community-grafana
+    namespace: monitoring
+    port: 80
+    localPort: 3000
