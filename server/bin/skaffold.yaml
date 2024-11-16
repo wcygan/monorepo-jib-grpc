@@ -1,0 +1,15 @@
+apiVersion: skaffold/v4beta9
+kind: Config
+metadata:
+  name: server
+build:
+  artifacts:
+    - image: wcygan/monorepo-jib-proto-server
+      context: .
+      jib:
+        project: com.example:server
+manifests:
+  rawYaml:
+    - server.yaml
+deploy:
+  kubectl: {}

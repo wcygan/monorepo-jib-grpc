@@ -23,6 +23,7 @@ public class PingServer {
         @Override
         public void sendPing(PingRequest request, io.grpc.stub.StreamObserver<PingResponse> responseObserver) {
             PingResponse response = PingResponse.newBuilder().setMessage("Pong: " + request.getMessage()).build();
+            System.out.println("Received response: " + response.getMessage());
             responseObserver.onNext(response);
             responseObserver.onCompleted();
         }
