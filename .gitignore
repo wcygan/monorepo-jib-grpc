@@ -1,11 +1,4 @@
 .idea
 **/target
 **/.DS_Store
-server/bin/.project
-server/bin/.settings/org.eclipse.core.resources.prefs
-server/bin/.settings/org.eclipse.m2e.core.prefs
-server/bin/pom.xml
-server/bin/server.yaml
-server/bin/skaffold.yaml
-server/bin/src/main/java/com/example/server/PingServer$PingServiceImpl.class
-server/bin/src/main/java/com/example/server/PingServer.class
+server/bin/*
